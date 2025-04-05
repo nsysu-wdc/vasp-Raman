@@ -1,7 +1,7 @@
 ## example
 
-
-``` main run file:
+main run file:
+``` 
 ./0-run-Raman.sh  
 ```
 
@@ -10,6 +10,8 @@ ref: https://github.com/raman-sc/VASP
 Unit cell parameters were taken from the [phonopy](http://phonopy.sourceforge.net) example folder. Silicon unit cell contains 8 atoms, thus 24 frequencies (phonons), three acoustic close to zero.  
 
 For this example `vasp_raman.py` script version [0.5.1] (https://raw.github.com/raman-sc/VASP/3cb3cdf0682609365c4b966472ef6eb5be1defc5/vasp_raman.py) was used.  
+
+[**Download complete example.**](https://github.com/raman-sc/VASP/raw/master/Sibulk-VASP/Sibulk-VASP-vasp_raman-0.5.1.tar.gz)  
 
 Raman intensities for all modes will be computed in one go. For the multi-step procedure see [Cyclopentadiene example](https://github.com/raman-sc/VASP/tree/master/Cyclopentadiene).  
 
@@ -22,9 +24,6 @@ POSCAR.phon  - VASP5 format is *required* (atomic symbols and numbers), at this 
 POTCAR       - `PAW_PBE Si 05Jan2001` PP (soft link to the POTCAR file from the PHONON folder)
 raman.sub    - shell script for the scheduler to *do the deed*
 ```
-
-[**Download complete example.**](https://github.com/raman-sc/VASP/raw/master/Sibulk-VASP/Sibulk-VASP-vasp_raman-0.5.1.tar.gz)  
-
 
 ## file structure-tree  
 here________________________________________________________________________________________   
