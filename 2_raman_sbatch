@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH -p exercise             # Partiotion name
+#SBATCH -n 16                   # number of cores (6, 8, 12, 16)
+##SBATCH -t 24:00:00            # Run time (days-hh:mm:ss)
+#SBATCH -o %x.o%j               # Path to the standard output file
+#SBATCH -e %x.e%j               # Path to the standard error ouput file
+
+module purge
+module load intel
+module load vasp/6.1.2.22Jul20.huang
+
+dir="disp_POSCAR"
+alist=$(cat alist)
+#alist=$(sed -n '1,$p' alist)
+arrlist=(${alist})
+
+#num=${#arrlist[@]}
+
+cd ${dir}
+for i in ${arrlist[@]} ; do
+    #echo $i
+	mkdir str.${i}
+	cd str.${i}
+	ln -s ../POSCAR.${i} POSCAR
+	ln -s ../../POTCAR .
+	ln -s ../../INCAR .
+	ln -s ../../KPOINTS .
+    srun vasp_std
+	cd ..
+done
+
+for i in ${arrlist[@]} ; do
+    ln -s ${dir}/str.${i}/OUTCAR ../OUTCAR.${i}.out
+done
+cd ..
