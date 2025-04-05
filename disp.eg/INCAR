@@ -1,0 +1,33 @@
+SYSTEM = Si_bulk
+#SYMPREC = 1E-4
+ISTART = 0 # From-scratch; job : 0-new 1-cont 2-samecut 
+NWRITE = 3 Verbosity
+
+! electronic relaxation
+ENCUT = 300.0 # cut-off energy
+PREC = Accurate # precision : accurate/normal/low 
+ISPIN = 1 # 1 - off, 2 - on (non spin-polarized calculation)
+ICHARG = 2 # > 10 for non-SC calculation
+IALGO = 38 # DAVidson, then RMM-DIIS
+EDIFF = 1.0E-8 # default
+ISMEAR = 0 # gaussian
+SIGMA = 0.05
+
+! PAW's
+LREAL = .FALSE. # default - Automatic choice of how projection is done
+ADDGRID = .TRUE.
+
+! phonons
+!! IBRION = 5
+!! POTIM = 0.01
+
+LEPSILON=.TRUE.
+
+! parallelisation
+LPLANE = .FALSE.
+
+! output
+LWAVE = .FALSE. # WAVECAR file
+LCHARG = .FALSE. # CHCAR file
+LELF = .FALSE.
+LVTOT = .FALSE.

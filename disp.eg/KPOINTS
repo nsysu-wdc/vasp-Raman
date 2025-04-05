@@ -1,0 +1,5 @@
+Automatic mesh
+0              ! number of k-points = 0 ->automatic generation scheme 
+M              ! generate a Gamma centered grid
+4 4 4
+0.5 0.5 0.5
