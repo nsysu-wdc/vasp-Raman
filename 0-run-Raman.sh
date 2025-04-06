@@ -27,15 +27,15 @@ echo ${VASP_RAMAN_PARAMS}
 
 ## step1: generate the displacement POSCAR by reading OUTCAR.phon
 # chmod +x 1_raman_gen_POS.py
-# ./1_raman_gen_POS.py &> gen.out
+#./1_raman_gen_POS.py &> gen.out
 
 ## step2: VASP calculate for each displacement POSCAR, pick one of them
-## method-I
-# sbatch -J raman 2_raman_sbatch
-## method-I
+## [ method-I ]
+#sbatch -J raman 2_raman_sbatch
+## [ method-II ]
 # chmod +x 3_raman_spectrum.py
-# ./2_raman_vasp.sh
+#./2_raman_vasp.sh
 
 ## step3: calculate the raman spectrum by each OUTCAR
 # chmod +x 2_raman_vasp.sh
-# ./3_raman_spectrum.py &> read.out
+#./3_raman_spectrum.py &> read.out
