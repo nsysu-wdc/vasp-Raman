@@ -32,7 +32,7 @@ def plot_peaks(raman_shift, intensity, invert_x=True):
     plt.figure(figsize=(10, 6))
     for x0, y0 in zip(raman_shift, intensity):
         plt.plot([x0, x0], [0, y0], color='blue', linewidth=1.5)
-    plt.xlabel('Raman Shift (cm?¹)', fontsize=12)
+    plt.xlabel('Raman Shift (cm$^{-1}$)', fontsize=12)
     plt.ylabel('Intensity (a.u.)', fontsize=12)
     plt.title('Raman Spectrum (Stick Plot)', fontsize=14)
     plt.grid(True, linestyle='--', alpha=0.5)
@@ -60,7 +60,7 @@ def plot_gaussian(raman_shift, intensity, linewidth=10, invert_x=True, annotate_
 
     plt.figure(figsize=(10, 6))
     plt.plot(x, y, color='blue', lw=1.8)
-    plt.xlabel('Raman Shift (cm?¹)', fontsize=12)
+    plt.xlabel('Raman Shift (cm$^{-1}$)', fontsize=12)
     plt.ylabel('Intensity (a.u.)', fontsize=12)
     plt.title('Raman Spectrum (Gaussian Broadening)', fontsize=14)
     plt.grid(True, linestyle='--', alpha=0.5)
@@ -96,9 +96,9 @@ def plot_raman(filename, mode="gaussian", linewidth=10):
 
 # %%
 if __name__ == "__main__":
-    # ??????????????
+    # Modify the file name and mode here to switch
     filename = "vasp_raman.dat"
-    plot_raman(filename, mode="gaussian")
+    plot_raman(filename, mode="gaussian", linewidth=10)
     # plot_raman(filename, mode="peak")
 
 # %%
