@@ -26,9 +26,11 @@ for i in ${arrlist[@]} ; do
 	ln -s ../../INCAR .
 	ln -s ../../KPOINTS .
 
+	echo " ========== " ${i}" ========== "
 	## submit file ##
 	ln -s ../../vasp.huang.default.sh .
 	sbatch -J $i vasp.huang.default.sh
+
 	cd ..
 done
 cd ..
