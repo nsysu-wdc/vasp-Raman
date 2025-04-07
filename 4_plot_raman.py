@@ -46,7 +46,7 @@ def plot_peaks(raman_shift, intensity, invert_x=False):
     plt.savefig('Raman-peaks.png', format='png', dpi=500)
 
 
-def plot_gaussian(raman_shift, intensity, linewidth=10, invert_x=False, annotate_peaks=False):
+def plot_gaussian(raman_shift, intensity, linewidth=10, invert_x=True, annotate_peaks=False):
     """
     --> Draw Gaussian superimposed Raman plot with optional peak annotations.
     """
