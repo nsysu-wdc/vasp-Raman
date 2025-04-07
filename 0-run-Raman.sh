@@ -33,9 +33,10 @@ echo ${VASP_RAMAN_PARAMS}
 ## [ method-I ]
 #sbatch -J raman 2_raman_sbatch
 ## [ method-II ]
-# chmod +x 3_raman_spectrum.py
+# chmod +x 2_raman_vasp.sh
 #./2_raman_vasp.sh
 
 ## step3: calculate the raman spectrum by each OUTCAR
-# chmod +x 2_raman_vasp.sh
+# chmod +x 3_raman_spectrum.py 4_plot_raman.py
 #./3_raman_spectrum.py &> read.out
+#./4_plot_raman.py
