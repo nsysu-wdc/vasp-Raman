@@ -21,6 +21,8 @@ ADDGRID = .TRUE.
 !! IBRION = 5
 !! POTIM = 0.01
 
+#In VASP, macroscopic dielectric tensor can be computed using either:
+# DFPT: `LEPSILON = .TRUE.`, or from frequency dependent dielectric matrix calculation: `LOPTICS = .TRUE.`.
 LEPSILON=.TRUE.
 
 ! parallelisation
