@@ -3,6 +3,7 @@
 # %% import global
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 
 def read_spectrum_data(filename):
@@ -79,6 +80,9 @@ def plot_spectrum(x_values, raman_intensities=None, ir_intensities=None, width=1
 if __name__ == "__main__":
     # Modify the file name and mode here to switch
     filename = 'data.txt'
+
+    # linux
+    os.system("awk '/# mode/ {count=25} count-- >= 0' dynmat.out > " + filename)
 
     freq, ir_intensity, raman_intensity = read_spectrum_data(filename)
     plot_spectrum(freq, raman_intensities=raman_intensity, ir_intensities=ir_intensity, width=10, mode='gaussian')
