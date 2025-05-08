@@ -82,7 +82,9 @@ if __name__ == "__main__":
     filename = 'data.txt'
 
     # linux
-    os.system("awk '/# mode/ {count=25} count-- >= 0' dynmat.out > " + filename)
+	#os.system("awk '/# mode/ {count=24} count-- >= 0' dynmat.out > " + filename)
+    os.system("awk '/depol.fact/ {count=24} count-- >= 0' dynmat.out > " + filename)
+    os.system("sed -i '1d' " + filename)
 
     freq, ir_intensity, raman_intensity = read_spectrum_data(filename)
     plot_spectrum(freq, raman_intensities=raman_intensity, ir_intensities=ir_intensity, width=10, mode='gaussian')
